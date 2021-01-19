@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+      name: go-multistage
+        labels:
+          app: go-multistage
+spec:
+  selector: 
+        matchlabels:
+            app: go-multistage
+  template:
+        metadata: 
+          labels:
+            app: go-multistage
+        spec: 
+          containers:
+          - name: go-multistage
+            image: go-multistage:latest
+            imagePullPolicy: Never
+            ports:
+            - cointainerPort: 8000

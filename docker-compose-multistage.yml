@@ -1,0 +1,9 @@
+version: '3'
+services: 
+  go-api:
+    build: 
+     context: .
+     dockerfile: Dockerfile.multistage 
+    ports: 
+      - 80:3000
+

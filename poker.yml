@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: golang-multi-api
+  labels:
+    app: golang-multi-api
+spec:
+  selector:
+    matchLabels:
+      app: golang-multi-api
+  template:
+    metadata:
+      labels:
+        app: golang-multi-api
+    spec:
+      containers:
+      - name: golang-multi-api
+        image: go-multistage:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8000
