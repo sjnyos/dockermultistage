@@ -1,9 +1,21 @@
 version: '3'
 services: 
-  go-api:
+  go-multistaged:
     build: 
      context: .
      dockerfile: Dockerfile.multistage 
     ports: 
       - 80:3000
+  go-alpined:
+    build: 
+      context: .
+      dockerfile: Dockerfile.golang-alpine 
+    ports: 
+      - 4000:3000
+  go-api-goimg:
+    build: 
+     context: .
+     dockerfile: Dockerfile.golang
+    ports: 
+      - 3000:3000
 

@@ -1,5 +1,6 @@
 FROM golang:1.10-alpine3.8 AS multistage
 
+RUN apk add --no-cache --update git
 WORKDIR /go/src/api
 COPY . .
 

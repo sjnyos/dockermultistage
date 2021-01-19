@@ -1,0 +1,9 @@
+version: '3'
+services: 
+  go-alpine:
+    build: 
+      context: .
+      dockerfile: Dockerfile.golang-alpine 
+    ports: 
+      - 4000:3000
+    
